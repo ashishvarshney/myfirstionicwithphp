@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title>Registration Form</ion-title>
+
+        <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
+      
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+  <ion-item>
+   
+    <ion-input placeholder="Your Name" type = "text"  [(ngModel)] ="your_name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label style="color:#999;">Gender</ion-label>
+    <ion-select placeholder="Select One" interface="popover" [(ngModel)] ="gender">
+      <ion-select-option value="female">Female</ion-select-option>
+      <ion-select-option value="male">Male</ion-select-option>
+    </ion-select>
+  </ion-item>
+  <ion-item>
+    <ion-label style="color:#999;" position="floating">Date Of Birth</ion-label>
+    <ion-datetime displayFormat="YYYY/MM/DD" min="1965-01-01" max="2012-12-09" [(ngModel)] = "date_of_birth" value=""></ion-datetime>
+  </ion-item>
+  <ion-item>
+   
+    <ion-input placeholder="Email ID" type = "email" [(ngModel)] = "email_address"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-input placeholder="Password" type = "password"  [(ngModel)] ="password"></ion-input>
+  </ion-item>
+ 
+  <ion-item>
+   
+    <ion-input placeholder="Confirm Password" type = "password" [(ngModel)] = "confirm_password"></ion-input>
+  </ion-item>
+  <ion-item>
+   <ion-button expand="full" class="no-padding" color="danger" (click)="tryRegister()" [disabled]>Register Now</ion-button>
+   
+  </ion-item>
+  <ion-item>
+    <p>Already have an Account Have one <span style="cursor:pointer" (click)="OpenLogIn()">Login Now</span></p>
+  </ion-item>
+</ion-list>
+</ion-content>
